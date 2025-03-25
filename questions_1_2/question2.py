@@ -6,7 +6,7 @@ from pathlib import Path
 
 all_tables = []
 
-with pdfplumber.open("Downloads/pdfs/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf") as pdf:
+with pdfplumber.open("downloads/pdfs/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf") as pdf:
     for page in pdf.pages[2:]:
         tables = page.extract_tables()
         print(f"extracting page:{page}")
@@ -25,7 +25,7 @@ final_dataframe.rename(columns={
 final_dataframe.to_csv("question2.csv", index=False)
 
 
-output_dir = Path(os.getcwd())/"Downloads/extracted_data"
+output_dir = Path(os.getcwd())/"downloads/extracted_data"
 output_dir.mkdir(exist_ok=True) 
 
 
