@@ -6,7 +6,7 @@ from pathlib import Path
 import zipfile
 
 home = Path(os.getcwd())
-download_dir = str(home/"Downloads/pdfs")
+download_dir = str(home/"downloads/pdfs")
 os.makedirs(download_dir, exist_ok=True)
 
 options = webdriver.ChromeOptions()
